@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;600&family=Montserrat:wght@900&family=Poppins:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playball&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;600;700&family=Pacifico&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background: url('bgr.jpg');
+    background-size: cover;
+}
+.wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 50vh;
+    flex-direction: column;
+}
+.wrapper .title{
+    text-align: center;
+    animation: title 2s linear;
+}
+@keyframes title{
+    0%{
+        opacity: 0;
+        transform: translateY(-300px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+.wrapper .title h1{
+    font-family: 'Pacifico', cursive;
+    font-size: 40px;
+    color: #fd8bb9;
+}
+.wrapper .title h2{
+    font-family: 'Playball', cursive;
+    font-size: 40px;
+    letter-spacing: 2px;
+    color: #AC5865;
+}
+.wrapper .wrapper-heart{
+    width: 250px;
+    height: 250px;
+    position: absolute;
+    cursor: pointer;
+    visibility: hidden;
+    animation: boxheart 3s forwards;
+    animation-delay: 3s;
+    transition: all 1s;
+}
+@keyframes boxheart{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        visibility: visible;
+        opacity: 1;
+    }
+}
+.wrapper .box-heart{
+    width: 250px;
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    margin-top: 180px;
+    cursor: pointer;
+    animation: heart 1s alternate infinite;
+}
+@keyframes heart{
+    0%{
+        transform: scale(0.9);
+    }
+    100%{
+        transform: scale(1.1);
+    }
+}
+.wrapper .box-heart .heart{
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background: red;
+    transform: rotate(45deg);
+    box-shadow: 0 0 20px red;
+}
+.wrapper .box-heart .heart::before{
+    position: absolute;
+    content: '';
+    width: 100px;
+    height: 100px;
+    background: red;
+    left: -50%;
+    border-radius: 50%;
+    box-shadow: 0 0 20px red;
+}
+.wrapper .box-heart .heart::after{
+    position: absolute;
+    content: '';
+    width: 100px;
+    height: 100px;
+    background: red;
+    top: -50%;
+    border-radius: 50%;
+    box-shadow: 0 0 20px red;
+}
+.box-heart h3{
+    position: absolute;
+    font-size: 35px;
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 4px;
+    color: white;
+    margin-top: -10%;
+    /* filter: blur(1px); */
+    text-align: center;
+    display: none;
+    transition: all 1s;
+    text-transform: uppercase;
+    text-shadow: 0 0 10px aqua,
+                0 0 20px aqua,
+                0 0 30px aqua,
+                0 0 40px aqua,
+                0 0 80px aqua,
+                0 0 100px aqua,
+                0 0 200px aqua;
+    animation: textheart 1s linear;
+}
+@keyframes textheart{
+    0%{
+        opacity: 0;
+        transform: scale(0.2);
+    }
+    100%{
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+.box-heart:hover h3{
+    display: block;
+}
+.wrapper .btn{
+    position: absolute;
+    margin-top: 60%;
+    padding: 10px 15px;
+    border:3px solid red;
+    border-radius: 8px;
+    cursor: pointer;
+    opacity: 0;
+    font-family: 'Poppins', sans-serif;
+    animation: btn 2s forwards;
+    animation-delay: 4s;
+    transition: all 1s;
+}
+@keyframes btn{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+.wrapper .btn:hover{
+    background-color: red;
+    color: white;
+    visibility: visible;
+    box-shadow: 2px 2px 10px rgb(255, 0, 0, 0.7);
+}
